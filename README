@@ -1,0 +1,2 @@
+Simple brainfuck interpreter, written in python3. Simple usage:
+bfcore.py sourcefile
