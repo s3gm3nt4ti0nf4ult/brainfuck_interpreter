@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 import sys
-from sys import argv
-from sys import exit
 
 bm = {}
 
@@ -28,7 +26,7 @@ class Stack():
 
 def check_mem_range(ptr, memory_size):
     if ptr >= memory_size or ptr < 0:
-        exit('Segfault!')
+        sys.exit('Segfault!')
 
 
 def read_program(sourcefile):
@@ -49,7 +47,7 @@ def brackets(program):
             st.push(i)
         elif program[i] == b']':
             if st.checkempty():
-                exit('Invalid brackteing, check syntax!')
+                sys.exit('Invalid brackteing, check syntax!')
             bm[i] = st.peek()
             bm[st.peek()] = i
             st.pop()
@@ -60,9 +58,9 @@ def main():
     memory = [0] * memory_size
     ptr = 0
     program = []
-    if len(argv) < 2:
-        exit('BF interpreter. \nUsage: {} sourcefile'.format(argv[0]))
-    program = read_program(argv[1])
+    if len(sys.argv) < 2:
+        exit('BF interpreter. \nUsage: {} sourcefile'.format(sys.argv[0]))
+    program = read_program(sys.argv[1])
     #print(program)
     brackets(program)
     i = 0
