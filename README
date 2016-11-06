@@ -1,2 +1,2 @@
-Simple brainfuck interpreter, written in python3. Simple usage:
+Simple brainfuck interpreter, written in python3. Usage:
 bfcore.py sourcefile
